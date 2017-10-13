@@ -40,7 +40,7 @@ Magic in Action|Hooray!
 ![Smooth moves](screens/benplays.png)|![Yay](screens/benwins.png)
 
 
-Alternatively, you can add images to your ```Assets``` folder in case you're into that.
+Alternatively, you can add images to your blue ```Assets.xcassets``` folder in the Project Navigator sidebar in case you're into that.
 
 Yup|Don't attempt this
 ---|---

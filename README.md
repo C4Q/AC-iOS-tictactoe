@@ -1,4 +1,4 @@
-## Unit X, Week 1 Homework
+## Unit 2, Week 1 Homework
 
 ```
 ::::    :::  :::::::: ::::::::::: 
@@ -17,7 +17,7 @@ ______  ___ _____ _____ _      _____ _____ _   _ ___________
                                                              
 ```
 
-Lucky you.
+Lucky you. Lucky, lucky you.
 
 ## Tic Tac Toe: Player vs. Player
 ### Exercise
@@ -37,7 +37,13 @@ Don't worry about:
 
 Ben's App in Action|Hooray!
 ---|---
-![In Editor](screens/benplays.png)|![Identity Inspector](screens/benwins.png)
+![Smooth moves](screens/benplays.png)|![Yay](screens/benwins.png)
+
+
+Alternatively, you can add images to your ```Assets``` folder in case you're into that.
+Yup|Don't attempt this
+---|---
+![Smooth moves](screens/vicplays.png)|![Yay](screens/vicalwayswins.png)
 
 
 #### Hints:
@@ -57,32 +63,20 @@ For some extra reading on this subject, check out: http://nshipster.com/ibinspec
 ![screenshot](screens/tagging.png)
 
 
-
 ## The ```git``` side of things
 
 1. Fork https://github.com/C4Q/AC-iOS-tictactoe if you haven't already
 2. Clone your **own** fork to a local directory.
-3. Add an upstream in your local directory.
-	```
-	git remote add upstream https://github.com/C4Q/AC-iOS-tictactoe
-	```
-4. Run this to get all the branches.
-	```
-	git fetch --all
-	```
-
-3. Run this to get a working homework branch
-	```
-	git fetch upstream homework:homework
-	git checkout homework
-	```
-4. At this point you should be able to open the project in that folder and have
+3. At this point you should be able to open the project in that folder and have
 a working table showing titles and dates. Work on the assignment and when
 you're done when you're done commit inside XCode or on the command line and then run
 	```
-	git push origin homework
+	git add .
+	git commit -am "Homework done"
+	git push origin master
 	```
-That will  push your changes up to that branch on your fork.
-5. Make a pull request from **your** fork. You should see the ```homework``` branch
-on both sides of the pull request.
+That will  push your changes up to that branch on your fork. 
+5. Feel free to commit early and often as a "checkpoint" of sorts to save your work.
+6. Make a pull request from **your** fork to C4Q/master.
+7. Take a breather.
 

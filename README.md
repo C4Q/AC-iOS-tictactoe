@@ -66,7 +66,7 @@ For some extra reading on this subject, check out: http://nshipster.com/ibinspec
 
 ## The ```git``` side of things
 
-1. Fork https://github.com/C4Q/AC-iOS-tictactoe if you haven't already
+1. Fork this repo if you haven't already.
 2. Clone your **own** fork to a local directory.
 3. At this point you should be able to open the project in that folder and have a working table showing titles and dates. Work on the assignment and when you're done when you're done commit inside XCode or on the command line and then run the below. That will  push your changes up to that branch on your fork. 
 	```

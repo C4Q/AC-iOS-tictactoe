@@ -73,11 +73,12 @@ a working table showing titles and dates. Work on the assignment and when
 you're done when you're done commit inside XCode or on the command line and then run
 	```
 	git add .
-	git commit -am "Homework done"
+	git commit -am "I made these changes"
 	git push origin master
 	```
 That will  push your changes up to that branch on your fork. 
-5. Feel free to commit early and often as a "checkpoint" of sorts to save your work.
-6. Make a pull request from **your** fork to C4Q/master.
-7. Take a breather.
+
+4. Feel free to commit early and often as a "checkpoint" of sorts to save your work.
+5. Make a pull request from **your** fork to C4Q/master.
+6. Take a breather.
 

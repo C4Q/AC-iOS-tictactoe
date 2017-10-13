@@ -36,7 +36,7 @@ Don't worry about:
 1. Don't worry too much about layout at the moment. You'll learn how to make your app pretty in a later project. See below for our ~lowered~ expectations.
 
 Ben's App in Action|Hooray!
----|---|---
+---|---
 ![In Editor](screens/benplays.png)|![Identity Inspector](screens/benwins.png)
 
 

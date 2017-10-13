@@ -40,10 +40,10 @@ For this assignment, you will be bringing Tic Tac Toe to life on your own.
 In Editor|Identity Inspector|Attributes Inspector
 ---|---|---
 ![In Editor](screens/ibinspectable.png)|![Identity Inspector](screens/customclass.png)|![Attributes Inspector](screens/rowcol.png)
----|---|---
 Adding these properties in your subclass|Selecting your Custom Class in the Identity Inspector|Hey look! New attributes in the Attributes Inspector!
 
-http://nshipster.com/ibinspectable-ibdesignable/
+For some extra reading on this subject, check out: http://nshipster.com/ibinspectable-ibdesignable/
+
 4. Alternatively, you can tag your buttons within the attributes inspector.
 ![screenshot](screens/tagging.png)
 

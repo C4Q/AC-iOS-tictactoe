@@ -8,18 +8,18 @@
 
 import UIKit
 
-class TicTacButton: UIButton {
-    @IBInspectable var row: Int
-    @IBInspectable var col: Int
-
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+//class TicTacButton: UIButton {
+//    @IBInspectable var row: Int = 0
+//    @IBInspectable var col: Int = 0
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: .zero)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//}
 
 class ViewController: UIViewController {
 

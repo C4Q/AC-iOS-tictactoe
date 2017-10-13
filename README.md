@@ -35,7 +35,7 @@ Do worry about:
 Don't worry about:
 1. Don't worry too much about layout at the moment. You'll learn how to make your app pretty in a later project. See below for our ~lowered~ expectations.
 
-Ben's App in Action|Hooray!
+Magic in Action|Hooray!
 ---|---
 ![Smooth moves](screens/benplays.png)|![Yay](screens/benwins.png)
 
@@ -68,16 +68,12 @@ For some extra reading on this subject, check out: http://nshipster.com/ibinspec
 
 1. Fork https://github.com/C4Q/AC-iOS-tictactoe if you haven't already
 2. Clone your **own** fork to a local directory.
-3. At this point you should be able to open the project in that folder and have
-a working table showing titles and dates. Work on the assignment and when
-you're done when you're done commit inside XCode or on the command line and then run
+3. At this point you should be able to open the project in that folder and have a working table showing titles and dates. Work on the assignment and when you're done when you're done commit inside XCode or on the command line and then run the below. That will  push your changes up to that branch on your fork. 
 	```
 	git add .
 	git commit -am "I made these changes"
 	git push origin master
 	```
-That will  push your changes up to that branch on your fork. 
-
 4. Feel free to commit early and often as a "checkpoint" of sorts to save your work.
 5. Make a pull request from **your** fork to C4Q/master.
 6. Take a breather.

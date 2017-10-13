@@ -35,7 +35,15 @@ For this assignment, you will be bringing Tic Tac Toe to life on your own.
 
 1. You should use buttons for each square.
 2. There is probably an easier way to do things. Instead of control-dragging 9 different outlets and actions to your ```ViewController```, you can code your logic to take in which button is clicked. Or you can do 9 drags, whatever you want.
-3. You can add inspectable properties if you sub-class a button-- particular IBInspectable to keep track of rows and cols. This will help you keep track of which button is clicked. http://nshipster.com/ibinspectable-ibdesignable/
+3. You can add inspectable properties if you sub-class a button-- particular IBInspectable to keep track of rows and cols. This will help you keep track of which button is clicked. 
+
+In Editor|Identity Inspector|Attributes Inspector
+---|---|---
+![In Editor](screens/ibinspectable.png)|![Identity Inspector](screens/customclass.png)|![Attributes Inspector](screens/rowcol.png)
+---|---|---
+Adding these properties in your subclass|Selecting your Custom Class in the Identity Inspector|Hey look! New attributes in the Attributes Inspector!
+
+http://nshipster.com/ibinspectable-ibdesignable/
 4. Alternatively, you can tag your buttons within the attributes inspector.
 ![screenshot](screens/tagging.png)
 

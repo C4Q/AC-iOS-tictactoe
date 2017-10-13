@@ -8,6 +8,19 @@
 
 import UIKit
 
+class TicTacButton: UIButton {
+    @IBInspectable var row: Int
+    @IBInspectable var col: Int
+
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var ticTacToeView: UIView!

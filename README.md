@@ -41,6 +41,7 @@ Ben's App in Action|Hooray!
 
 
 Alternatively, you can add images to your ```Assets``` folder in case you're into that.
+
 Yup|Don't attempt this
 ---|---
 ![Smooth moves](screens/vicplays.png)|![Yay](screens/vicalwayswins.png)

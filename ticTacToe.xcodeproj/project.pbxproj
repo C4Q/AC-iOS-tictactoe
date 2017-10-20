@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5432548A1F7EE5B300E19CCF /* ticTacToeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543254891F7EE5B300E19CCF /* ticTacToeBrain.swift */; };
+		5432548A1F7EE5B300E19CCF /* TicTacToeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543254891F7EE5B300E19CCF /* TicTacToeBrain.swift */; };
 		5432548C1F7EF48100E19CCF /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5432548B1F7EF48100E19CCF /* GameButton.swift */; };
 		54B8BB861F7C28D90087A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8BB851F7C28D90087A677 /* AppDelegate.swift */; };
 		54B8BB881F7C28D90087A677 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B8BB871F7C28D90087A677 /* ViewController.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		543254891F7EE5B300E19CCF /* ticTacToeBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticTacToeBrain.swift; sourceTree = "<group>"; };
+		543254891F7EE5B300E19CCF /* TicTacToeBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeBrain.swift; sourceTree = "<group>"; };
 		5432548B1F7EF48100E19CCF /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		54B8BB821F7C28D90087A677 /* ticTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B8BB851F7C28D90087A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 				54B8BB851F7C28D90087A677 /* AppDelegate.swift */,
 				54B8BB871F7C28D90087A677 /* ViewController.swift */,
 				5432548B1F7EF48100E19CCF /* GameButton.swift */,
-				543254891F7EE5B300E19CCF /* ticTacToeBrain.swift */,
+				543254891F7EE5B300E19CCF /* TicTacToeBrain.swift */,
 				54B8BB891F7C28D90087A677 /* Main.storyboard */,
 				54B8BB8C1F7C28D90087A677 /* Assets.xcassets */,
 				54B8BB8E1F7C28D90087A677 /* LaunchScreen.storyboard */,
@@ -144,7 +144,7 @@
 			files = (
 				54B8BB881F7C28D90087A677 /* ViewController.swift in Sources */,
 				5432548C1F7EF48100E19CCF /* GameButton.swift in Sources */,
-				5432548A1F7EE5B300E19CCF /* ticTacToeBrain.swift in Sources */,
+				5432548A1F7EE5B300E19CCF /* TicTacToeBrain.swift in Sources */,
 				54B8BB861F7C28D90087A677 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

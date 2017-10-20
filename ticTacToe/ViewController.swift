@@ -71,6 +71,11 @@ class ViewController: UIViewController {
             allButtons = [button11, button12, button13, button21, button22, button23, button31, button32, button33]
             for button in allButtons {
                 button.isEnabled = false
+                p1WinCount.isHidden = false
+                p2WinCount.isHidden = false
+                p1p2WinLabel.isHidden = false
+                p1WinCount.text = "ticTacToe.p1WinCount"
+                p2WinCount.text = "ticTacToe.p2WinCount"
             }
         }
     }
@@ -80,6 +85,8 @@ class ViewController: UIViewController {
         ticTacToe.youWin = false
         ticTacToe.playerOneArray = []
         ticTacToe.playerTwoArray = []
+        ticTacToe.tagPlayerOneArray = []
+        ticTacToe.tagPlayerTwoArray = []
         for button in allButtons {
             button.isEnabled = true
             button.setImage(nil, for: .normal)

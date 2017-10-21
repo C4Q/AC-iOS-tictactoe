@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//designed for iPhoneX
 class ViewController: UIViewController {
     var allButtons: [GameButton] = []
     @IBOutlet weak var ticTacToeLabel: UILabel!
@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var button31: GameButton!
     @IBOutlet weak var button32: GameButton!
     @IBOutlet weak var button33: GameButton!
+    @IBOutlet weak var jonSnow: UIImageView!
+    @IBOutlet weak var nightKing: UIImageView!
     
     let ticTacToe = ticTacToeBrain()
     
@@ -44,9 +46,13 @@ class ViewController: UIViewController {
         if ticTacToe.playerTracker == true {
             sender.setImage(#imageLiteral(resourceName: "xbutton"), for: .normal)
             playerTurnLabel.text = "Player Two's Turn"
+            jonSnow.isHidden = true
+            nightKing.isHidden = false
         } else {
             sender.setImage(#imageLiteral(resourceName: "oButton"), for: .normal)
             playerTurnLabel.text = "Player One's Turn"
+            jonSnow.isHidden = false
+            nightKing.isHidden = true
         }
         sender.isEnabled = false
         func addToArray() {
@@ -61,12 +67,17 @@ class ViewController: UIViewController {
         addToArray()
         ticTacToe.checkWinner()
         if ticTacToe.youWin == true {
+            playerTurnLabel.isHidden = true
             if ticTacToe.playerTracker == true {
                 winLabel.text = "P1 Wins!"
                 winLabel.isHidden = false
+                nightKing.isHidden = true
+                jonSnow.isHidden = false
             } else {
                 winLabel.text = "P2 Wins!"
                 winLabel.isHidden = false
+                jonSnow.isHidden = true
+                nightKing.isHidden = false
             }
             allButtons = [button11, button12, button13, button21, button22, button23, button31, button32, button33]
             for button in allButtons {
@@ -74,25 +85,42 @@ class ViewController: UIViewController {
                 p1WinCount.isHidden = false
                 p2WinCount.isHidden = false
                 p1p2WinLabel.isHidden = false
-                p1WinCount.text = "ticTacToe.p1WinCount"
-                p2WinCount.text = "ticTacToe.p2WinCount"
+                p1WinCount.text = "\(ticTacToe.p1WinCount)"
+                p2WinCount.text = "\(ticTacToe.p2WinCount)"
             }
+        }
+        if ticTacToe.draw == true {
+            winLabel.text = "It's a Draw"
+            winLabel.isHidden = false
+            nightKing.isHidden = true
+            jonSnow.isHidden = true
+            playerTurnLabel.isHidden = true
         }
     }
     
     @IBAction func playAgainButton(_ sender: UIButton) {
         allButtons = [button11, button12, button13, button21, button22, button23, button31, button32, button33]
         ticTacToe.youWin = false
+        playerTurnLabel.isHidden = false
         ticTacToe.playerOneArray = []
         ticTacToe.playerTwoArray = []
         ticTacToe.tagPlayerOneArray = []
         ticTacToe.tagPlayerTwoArray = []
+        ticTacToe.clickCount = 0
+        ticTacToe.draw = false
         for button in allButtons {
             button.isEnabled = true
             button.setImage(nil, for: .normal)
         }
         winLabel.isHidden = true
         loseLabel.isHidden = true
+        if ticTacToe.playerTracker == false {
+            jonSnow.isHidden = false
+            nightKing.isHidden = true
+        } else {
+            nightKing.isHidden = false
+            jonSnow.isHidden = true
+        }
     }
     
     

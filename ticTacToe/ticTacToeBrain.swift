@@ -13,6 +13,8 @@ import UIKit
 class ticTacToeBrain {
     var playerTracker: Bool = false
     var youWin = false
+    var draw = false
+    var clickCount = 0
     var p1WinCount = 0
     var p2WinCount = 0
     //Tuple version of Array
@@ -34,6 +36,7 @@ class ticTacToeBrain {
         [1,4,7]]
     
     func checkWinner () {
+        clickCount += 1
         for winCondition in winConditions {
             if winCondition.isSubset(of: Set(tagPlayerOneArray)) {
                 youWin = true
@@ -45,6 +48,9 @@ class ticTacToeBrain {
                 youWin = true
                 p2WinCount += 1
             }
+        }
+        if clickCount == 9 {
+            draw = true
         }
     }
     

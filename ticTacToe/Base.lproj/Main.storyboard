@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tic-Tac-Toe-Template" translatesAutoresizingMaskIntoConstraints="NO" id="I9a-Ds-4Gm">
-                                <rect key="frame" x="0.0" y="110" width="375" height="392"/>
+                                <rect key="frame" x="0.0" y="177" width="375" height="392"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDj-R5-zCG" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="27" y="141" width="94" height="97"/>
+                                <rect key="frame" x="27" y="208" width="94" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEC-6a-bHq" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="129" y="141" width="110" height="97"/>
+                                <rect key="frame" x="129" y="208" width="110" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAi-Du-Kji" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="247" y="141" width="102" height="97"/>
+                                <rect key="frame" x="247" y="208" width="102" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6D-9u-W0z" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="27" y="252" width="94" height="108"/>
+                                <rect key="frame" x="27" y="319" width="94" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -86,7 +86,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-q4-AHO" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="129" y="252" width="110" height="108"/>
+                                <rect key="frame" x="129" y="319" width="110" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -102,7 +102,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFy-GP-fzr" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="247" y="252" width="95" height="108"/>
+                                <rect key="frame" x="247" y="319" width="95" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zuy-Fe-S5b" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="27" y="368" width="94" height="101"/>
+                                <rect key="frame" x="27" y="435" width="94" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -134,7 +134,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSy-fE-LC7" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="135" y="368" width="97" height="101"/>
+                                <rect key="frame" x="135" y="435" width="97" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -150,7 +150,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-Qq-eI6" customClass="GameButton" customModule="ticTacToe">
-                                <rect key="frame" x="247" y="368" width="95" height="101"/>
+                                <rect key="frame" x="247" y="435" width="95" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -165,36 +165,36 @@
                                     <action selector="gameButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xeq-Cq-d3s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tic Tac Toe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC2-K6-iTu">
-                                <rect key="frame" x="120" y="44" width="136" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tic Tac Toe of Thrones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC2-K6-iTu">
+                                <rect key="frame" x="87" y="44" width="194" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Win!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDQ-sZ-lxe">
-                                <rect key="frame" x="144" y="510" width="88" height="21"/>
+                                <rect key="frame" x="144" y="612" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Lose!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SF3-l1-wLA">
-                                <rect key="frame" x="144" y="539" width="88" height="21"/>
+                                <rect key="frame" x="144" y="641" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player One's Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gux-EX-gTv">
-                                <rect key="frame" x="109" y="81" width="159" height="21"/>
+                                <rect key="frame" x="109" y="148" width="159" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qch-mP-xcR">
-                                <rect key="frame" x="129" y="568" width="110" height="30"/>
+                                <rect key="frame" x="129" y="670" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" red="1" green="0.3078787210798789" blue="0.2345048030779352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -204,21 +204,29 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P1 Wins                                                    P2 Wins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-6y-xoj">
-                                <rect key="frame" x="16" y="594" width="368" height="21"/>
+                                <rect key="frame" x="16" y="696" width="368" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P1WinCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d28-yj-GJS">
-                                <rect key="frame" x="16" y="613" width="70" height="21"/>
+                                <rect key="frame" x="16" y="715" width="70" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jonsnow" translatesAutoresizingMaskIntoConstraints="NO" id="7sg-zI-sUL">
+                                <rect key="frame" x="22" y="102" width="59" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NightsKing" translatesAutoresizingMaskIntoConstraints="NO" id="IvK-lf-iUV">
+                                <rect key="frame" x="300" y="102" width="59" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="P2WinCount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDN-qr-ZKk">
-                                <rect key="frame" x="295" y="613" width="80" height="21"/>
+                                <rect key="frame" x="279" y="715" width="80" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -238,7 +246,9 @@
                         <outlet property="button31" destination="Zuy-Fe-S5b" id="qTy-eO-vNL"/>
                         <outlet property="button32" destination="mSy-fE-LC7" id="tNq-95-zin"/>
                         <outlet property="button33" destination="A5p-Qq-eI6" id="AME-M1-J20"/>
+                        <outlet property="jonSnow" destination="7sg-zI-sUL" id="NRd-gN-trp"/>
                         <outlet property="loseLabel" destination="SF3-l1-wLA" id="yrp-Ba-eRq"/>
+                        <outlet property="nightKing" destination="IvK-lf-iUV" id="2qk-Kl-2kl"/>
                         <outlet property="p1WinCount" destination="d28-yj-GJS" id="QfH-gv-frT"/>
                         <outlet property="p1p2WinLabel" destination="war-6y-xoj" id="taY-hL-kbW"/>
                         <outlet property="p2WinCount" destination="PDN-qr-ZKk" id="Y10-TU-lXv"/>
@@ -254,6 +264,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NightsKing" width="337" height="446"/>
         <image name="Tic-Tac-Toe-Template" width="585" height="615"/>
+        <image name="jonsnow" width="2048" height="1536"/>
     </resources>
 </document>

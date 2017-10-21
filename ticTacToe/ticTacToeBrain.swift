@@ -12,6 +12,16 @@ import UIKit
 
 class ticTacToeBrain {
     var playerTracker: Bool = false
+    func clickABox() {
+        if playerTracker == true {
+            playerTracker = false
+        } else {
+            playerTracker = true
+        }
+    }
+}
+
+class CheckWinner {
     var youWin = false
     var draw = false
     var clickCount = 0
@@ -20,11 +30,9 @@ class ticTacToeBrain {
     //Tuple version of Array
     var playerOneArray: [(Int, Int)] = []
     var playerTwoArray: [(Int, Int)] = []
-    
     //Tag version of Array
     var tagPlayerOneArray: [Int] = []
     var tagPlayerTwoArray: [Int] = []
-    
     let winConditions: [Set<Int>] = [
         [1,5,9],
         [3,5,7],
@@ -34,8 +42,7 @@ class ticTacToeBrain {
         [3,6,9],
         [2,5,8],
         [1,4,7]]
-    
-    func checkWinner () {
+    func winnerCheck () {
         clickCount += 1
         for winCondition in winConditions {
             if winCondition.isSubset(of: Set(tagPlayerOneArray)) {
@@ -50,15 +57,12 @@ class ticTacToeBrain {
             }
         }
         if clickCount == 9 {
-            draw = true
-        }
-    }
-    
-    func clickABox() {
-        if playerTracker == true {
-            playerTracker = false
-        } else {
-            playerTracker = true
+            (youWin) ? (draw = false) : (draw = true)
+//            if youWin == true {
+//                draw = false
+//            } else {
+//                draw = true
+//            }
         }
     }
 }

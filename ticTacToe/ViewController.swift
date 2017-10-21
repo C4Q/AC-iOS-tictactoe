@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nightKing: UIImageView!
     
     let ticTacToe = ticTacToeBrain()
+    let winCondition = CheckWinner()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,16 +58,16 @@ class ViewController: UIViewController {
         sender.isEnabled = false
         func addToArray() {
             if ticTacToe.playerTracker == true {
-                ticTacToe.playerOneArray.append((sender.column, sender.row))
-                ticTacToe.tagPlayerOneArray.append(sender.tag)
+                winCondition.playerOneArray.append((sender.column, sender.row))
+                winCondition.tagPlayerOneArray.append(sender.tag)
             } else {
-                ticTacToe.playerTwoArray.append((sender.column, sender.row))
-                ticTacToe.tagPlayerTwoArray.append(sender.tag)
+                winCondition.playerTwoArray.append((sender.column, sender.row))
+                winCondition.tagPlayerTwoArray.append(sender.tag)
             }
         }
         addToArray()
-        ticTacToe.checkWinner()
-        if ticTacToe.youWin == true {
+        winCondition.winnerCheck()
+        if winCondition.youWin == true {
             playerTurnLabel.isHidden = true
             if ticTacToe.playerTracker == true {
                 winLabel.text = "P1 Wins!"
@@ -85,11 +86,11 @@ class ViewController: UIViewController {
                 p1WinCount.isHidden = false
                 p2WinCount.isHidden = false
                 p1p2WinLabel.isHidden = false
-                p1WinCount.text = "\(ticTacToe.p1WinCount)"
-                p2WinCount.text = "\(ticTacToe.p2WinCount)"
+                p1WinCount.text = "\(winCondition.p1WinCount)"
+                p2WinCount.text = "\(winCondition.p2WinCount)"
             }
         }
-        if ticTacToe.draw == true {
+        if winCondition.draw == true {
             winLabel.text = "It's a Draw"
             winLabel.isHidden = false
             nightKing.isHidden = true
@@ -100,14 +101,14 @@ class ViewController: UIViewController {
     
     @IBAction func playAgainButton(_ sender: UIButton) {
         allButtons = [button11, button12, button13, button21, button22, button23, button31, button32, button33]
-        ticTacToe.youWin = false
+        winCondition.youWin = false
         playerTurnLabel.isHidden = false
-        ticTacToe.playerOneArray = []
-        ticTacToe.playerTwoArray = []
-        ticTacToe.tagPlayerOneArray = []
-        ticTacToe.tagPlayerTwoArray = []
-        ticTacToe.clickCount = 0
-        ticTacToe.draw = false
+        winCondition.playerOneArray = []
+        winCondition.playerTwoArray = []
+        winCondition.tagPlayerOneArray = []
+        winCondition.tagPlayerTwoArray = []
+        winCondition.clickCount = 0
+        winCondition.draw = false
         for button in allButtons {
             button.isEnabled = true
             button.setImage(nil, for: .normal)

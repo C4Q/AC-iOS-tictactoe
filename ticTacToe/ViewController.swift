@@ -43,10 +43,12 @@ class ViewController: UIViewController {
                 ticTacTocBrain.turnPlayerChose(playerKey: 1, x: sender.row, y: sender.column)
                 sender.setImage(#imageLiteral(resourceName: "X_tictactoe"), for: .normal)
                 if ticTacTocBrain.hasPlayer1Won() {
-                    currentPlayerTurnLabel.text = "Player ONE has WON!"
-                    player1WinsLabel.text = "Player One Wins: \(ticTacTocBrain.player1Wins)"
-                    aPlayerHasWon()
+                    player1HasWon()
                 } else {
+                    if ticTacTocBrain.turnNumber == 10 {
+                        gameIsATie()
+                        return
+                    }
                     turnLabel.text = "Turn: \(ticTacTocBrain.turnNumber)"
                     currentPlayerTurnLabel.text = "Player two's turn"
                 }
@@ -54,17 +56,16 @@ class ViewController: UIViewController {
                 ticTacTocBrain.turnPlayerChose(playerKey: -1, x: sender.row, y: sender.column)
                 sender.setImage(#imageLiteral(resourceName: "O_tictactoe"), for: .normal)
                 if ticTacTocBrain.hasPlayer2Won() {
-                    currentPlayerTurnLabel.text = "Player TWO has WON!"
-                    player2WinsLabel.text = "Player Two Wins: \(ticTacTocBrain.player2Wins)"
-                    aPlayerHasWon()
+                    player2HasWon()
                 } else {
+                    if ticTacTocBrain.turnNumber == 10 {
+                        gameIsATie()
+                        return
+                    }
                     turnLabel.text = "Turn: \(ticTacTocBrain.turnNumber)"
                     currentPlayerTurnLabel.text = "Player one's turn"
                 }
             }
-        }
-        if ticTacTocBrain.turnNumber == 10 {
-            gameIsATie()
         }
     }
     
@@ -72,25 +73,38 @@ class ViewController: UIViewController {
         for button in gameButtons {
             button.setImage(nil, for: .normal)
         }
-        newGameButton.setTitle("Reset Game", for: .normal)
+        newGameButton.setImage(#imageLiteral(resourceName: "resetGame"), for: .normal)
         enableGameButtons()
         ticTacTocBrain.resetGame()
+        currentPlayerTurnLabel.backgroundColor = nil
+        currentPlayerTurnLabel.textColor = UIColor.black
         currentPlayerTurnLabel.text = "Player one's turn"
         turnLabel.text = "Turn: 1"
     }
     
     func gameIsATie() {
         currentPlayerTurnLabel.text = "It's a TIE!"
-        for button in gameButtons {
-            button.isEnabled = false
-        }
+        disableGameButtons()
         ticTacTocBrain.resetGame()
-        newGameButton.setTitle("New Game", for: .normal)
+        newGameButton.setImage(#imageLiteral(resourceName: "newGame"), for: .normal)
     }
     
-    func aPlayerHasWon() {
+    func player1HasWon() {
+        currentPlayerTurnLabel.text = "Player ONE has WON!"
+        currentPlayerTurnLabel.backgroundColor = UIColor.red
+        currentPlayerTurnLabel.textColor = UIColor.white
+        player1WinsLabel.text = "Player One Wins: \(ticTacTocBrain.player1Wins)"
         disableGameButtons()
-        newGameButton.setTitle("New Game", for: .normal)
+        newGameButton.setImage(#imageLiteral(resourceName: "newGame"), for: .normal)
+    }
+    
+    func player2HasWon() {
+        currentPlayerTurnLabel.text = "Player TWO has WON!"
+        currentPlayerTurnLabel.backgroundColor = UIColor.blue
+        currentPlayerTurnLabel.textColor = UIColor.white
+        player2WinsLabel.text = "Player Two Wins: \(ticTacTocBrain.player2Wins)"
+        disableGameButtons()
+        newGameButton.setImage(#imageLiteral(resourceName: "newGame"), for: .normal)
     }
     
     func enableGameButtons() {

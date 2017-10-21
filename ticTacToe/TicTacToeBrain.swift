@@ -12,8 +12,8 @@ class TicTacToeBrain {
     
     var ticTacTocBoard: [[Int]]
     var turnNumber = 1
-    var player1Wins = 0
-    var player2Wins = 0
+    private var player1Wins = 0
+    private var player2Wins = 0
     
     init() {
         ticTacTocBoard = [[0,0,0],

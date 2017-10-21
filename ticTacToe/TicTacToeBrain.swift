@@ -88,6 +88,10 @@ class TicTacToeBrain {
         return false
     }
     
+    func noMoreMoves() -> Bool {
+        return turnNumber == 10
+    }
+    
     func resetGame() {
         simpleBoard.resetSimpleBoard()
         turnNumber = 1

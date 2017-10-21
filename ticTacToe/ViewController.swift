@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     @IBOutlet var newGameButton: UIButton!
     
     var ticTacTocBrain = TicTacToeBrain()
-    
     var gameButtons = [GameButton]()
     
     override func viewDidLoad() {
@@ -42,7 +41,7 @@ class ViewController: UIViewController {
                 if ticTacTocBrain.hasPlayer1Won() {
                     player1HasWon()
                 } else {
-                    if ticTacTocBrain.currentTurnNumber() == 10 {
+                    if ticTacTocBrain.noMoreMoves() {
                         gameIsATie()
                         return
                     }
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
                 if ticTacTocBrain.hasPlayer2Won() {
                     player2HasWon()
                 } else {
-                    if ticTacTocBrain.currentTurnNumber() == 10 {
+                    if ticTacTocBrain.noMoreMoves() {
                         gameIsATie()
                         return
                     }

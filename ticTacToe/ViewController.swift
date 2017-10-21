@@ -8,77 +8,82 @@
 
 import UIKit
 
+//made to be played in iPhone 6s
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var gameTitle: UILabel!
     @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var gameGrid: UIImageView!
+    @IBOutlet weak var gameGrid: UILabel!
     @IBOutlet weak var myNameLabel: UILabel!
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var player2Label: UILabel!
-    @IBOutlet weak var player1O: UIImageView!
-    @IBOutlet weak var player2X: UIImageView!
+    @IBOutlet weak var player1O: UILabel!
+    @IBOutlet weak var player2X: UILabel!
+    @IBOutlet weak var player1Score: UILabel!
+    @IBOutlet weak var player2Score: UILabel!
     @IBOutlet var gridButtons: [GameButton]!
-    @IBOutlet weak var gameResultLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     var ticTacToe = ticTacToeBrain()
+    
+    var gameItems: [UILabel] = []
     
     override func viewDidLoad() {
         showTitleScreen()
         hideGame()
+        gameItems += [gameGrid, resultLabel, player1Label, player2Label, player1O, player2X, player1Score, player2Score]
         super.viewDidLoad()
     }
     
-    
     @IBAction func gridButtonPressed(_ sender: GameButton) {
-        if ticTacToe.playerTurn == 1 {
-            sender.setBackgroundImage(#imageLiteral(resourceName: "grid o"), for: .normal)
-            ticTacToe.gameMatrix[sender.row][sender.column] = "O"
-        } else {
+        if ticTacToe.playerTurn == .one {
             sender.setBackgroundImage(#imageLiteral(resourceName: "grid x"), for: .normal)
-            ticTacToe.gameMatrix[sender.row][sender.column] = "X"
+            ticTacToe.board[sender.row][sender.column] = .x
+            resultLabel.text = "Player 2's Turn"
+        } else {
+            sender.setBackgroundImage(#imageLiteral(resourceName: "grid o"), for: .normal)
+            ticTacToe.board[sender.row][sender.column] = .o
+            resultLabel.text = "Player 1's Turn"
         }
         sender.isEnabled = false
         ticTacToe.checkForWin()
         if ticTacToe.win {
             endGame()
-            gameResultLabel.text = "Congrats Player \(ticTacToe.playerTurn)!"
+            resultLabel.text = "Congrats Player \(ticTacToe.playerTurn.rawValue)!"
+            
             return
-        } else if ticTacToe.tie {
+        } else if ticTacToe.moveCount == 9 {
             endGame()
-            gameResultLabel.text = "It was a tie!"
+            resultLabel.text = "It was a tie!"
             return
         }
-        ticTacToe.changePlayerTurn()
+        ticTacToe.playerTurn.changeTurn()
     }
-//        if ticTacToe.tie {
-//            //if there was a tie
-//            endGame()
-//            gameResultLabel.text = "It was a tie!"
-//        }
-//        case true:
-//            //someone won
-//            endGame()
-//            gameResultLabel.text = "Congrats Player \(ticTacToe.playerTurn)!"
-//        }
     
     @IBAction func playButtonPressed(_ sender: UIButton) {
         startGame()
+        hideTitleScreen()
+        displayPlayerScore()
+    }
+    
+    @IBAction func playAgainButtonPressed(_ sender: UIButton) {
+        ticTacToe.resetGame()
+        playAgainButton.isHidden = true
+        resultLabel.isHidden = true
+        startGame()
+        displayPlayerScore()
     }
     
     func showTitleScreen() {
+        roundEdgesOf(label: gameTitle)
+        roundEdgesOf(label: myNameLabel)
+        roundEdgesOf(button: playButton)
         gameTitle.isHidden = false
-        gameTitle.layer.cornerRadius = 30
-        gameTitle.layer.masksToBounds = true
-        gameTitle.layer.backgroundColor = UIColor.white.cgColor
-        playButton.isHidden = false
-        playButton.layer.cornerRadius = 30
-        playButton.layer.masksToBounds = true
-        playButton.layer.backgroundColor = UIColor.white.cgColor
         myNameLabel.isHidden = false
-        myNameLabel.layer.cornerRadius = 30
-        myNameLabel.layer.masksToBounds = true
-        myNameLabel.layer.backgroundColor = UIColor.white.cgColor
+        playButton.isHidden = false
+        playButton.isEnabled = true
     }
     
     func hideTitleScreen() {
@@ -88,43 +93,64 @@ class ViewController: UIViewController {
     }
     
     func hideGame() {
-        gameGrid.isHidden = true
-        player1Label.isHidden = true
-        player2Label.isHidden = true
-        player1O.isHidden = true
-        player2X.isHidden = true
-        gameResultLabel.isHidden = true
+        gameItems.forEach{$0.isHidden = true}
+        resultLabel.isHidden = true
+        playAgainButton.isHidden = true
     }
     
-    func startGame() { //use this when player clicks play
-        gameGrid.isHidden = false
-        gameGrid.layer.cornerRadius = 20
-        gameGrid.layer.masksToBounds = true
-        gameGrid.layer.backgroundColor = UIColor.white.cgColor
-        player1Label.isHidden = false
-        player1Label.layer.cornerRadius = 30
-        player1Label.layer.masksToBounds = true
-        player1Label.layer.backgroundColor = UIColor.white.cgColor
-        player2Label.isHidden = false
-        player2Label.layer.cornerRadius = 30
-        player2Label.layer.masksToBounds = true
-        player2Label.layer.backgroundColor = UIColor.white.cgColor
-        player1O.isHidden = false
-        player1O.layer.cornerRadius = 30
-        player1O.layer.masksToBounds = true
-        player1O.layer.backgroundColor = UIColor.white.cgColor
-        player2X.isHidden = false
-        player2X.layer.cornerRadius = 30
-        player2X.layer.masksToBounds = true
-        player2X.layer.backgroundColor = UIColor.white.cgColor
-        gridButtons.forEach{$0.setBackgroundImage(nil, for: .normal)}
+    func startGame() {
+        gameItems.forEach{
+            roundEdgesOf(label: $0)
+            if $0 == resultLabel {
+                $0.text = "Player 1's Turn"
+            }
+            $0.isHidden = false
+        }
+        gridButtons.forEach{
+            roundEdgesOf(gameButton: $0)
+            $0.isHidden = false
+            $0.setBackgroundImage(nil, for: .normal)
+            $0.isEnabled = true
+        }
     }
     
     func endGame() {
-        //stuff that happens when player 1 or 2 wins/loses
         gridButtons.forEach{$0.isEnabled = false}
-        gameResultLabel.isHidden = false
+        resultLabel.isHidden = false
+        playAgainButton.isHidden = false
+        roundEdgesOf(button: playAgainButton)
+        displayPlayerScore()
     }
     
+    func displayPlayerScore() {
+        ticTacToe.updatePlayerScores()
+        player1Score.text = "\(ticTacToe.player1Score)"
+        player2Score.text = "\(ticTacToe.player2Score)"
+        player1Score.isHidden = false
+        player2Score.isHidden = false
+    }
+    
+    //not necessary, just used to make my app pretty 😂
+    func roundEdgesOf(label: UILabel? = nil, button: UIButton? = nil, gameButton: GameButton? = nil) {
+        var notRoundItems: [Any] = []
+        if let label = label {
+            notRoundItems.append(label)
+        }
+        if let button = button {
+            notRoundItems.append(button)
+        }
+        if let gameButton = gameButton {
+            notRoundItems.append(gameButton)
+        }
+        notRoundItems.forEach{
+            if !($0 is GameButton) {
+                ($0 as AnyObject).layer.borderWidth = 1
+                ($0 as AnyObject).layer.borderColor = UIColor.init(red: 0.745, green: 0.278, blue: 0.309, alpha: 1).cgColor
+            }
+            ($0 as AnyObject).layer.cornerRadius = 20
+            ($0 as AnyObject).layer.masksToBounds = true
+            ($0 as AnyObject).layer.backgroundColor = UIColor.white.cgColor
+        }
+    }
 }
 

@@ -14,6 +14,7 @@
 		54B8BB8B1F7C28D90087A677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B8BB891F7C28D90087A677 /* Main.storyboard */; };
 		54B8BB8D1F7C28D90087A677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B8BB8C1F7C28D90087A677 /* Assets.xcassets */; };
 		54B8BB901F7C28D90087A677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B8BB8E1F7C28D90087A677 /* LaunchScreen.storyboard */; };
+		E2EC0EA31F9BA2BA00382467 /* SimpleTicTacToeBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EC0EA21F9BA2BA00382467 /* SimpleTicTacToeBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		54B8BB8C1F7C28D90087A677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54B8BB8F1F7C28D90087A677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B8BB911F7C28D90087A677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2EC0EA21F9BA2BA00382467 /* SimpleTicTacToeBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTicTacToeBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				54B8BB871F7C28D90087A677 /* ViewController.swift */,
 				5432548B1F7EF48100E19CCF /* GameButton.swift */,
 				543254891F7EE5B300E19CCF /* TicTacToeBrain.swift */,
+				E2EC0EA21F9BA2BA00382467 /* SimpleTicTacToeBoard.swift */,
 				54B8BB891F7C28D90087A677 /* Main.storyboard */,
 				54B8BB8C1F7C28D90087A677 /* Assets.xcassets */,
 				54B8BB8E1F7C28D90087A677 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				5432548C1F7EF48100E19CCF /* GameButton.swift in Sources */,
 				5432548A1F7EE5B300E19CCF /* TicTacToeBrain.swift in Sources */,
 				54B8BB861F7C28D90087A677 /* AppDelegate.swift in Sources */,
+				E2EC0EA31F9BA2BA00382467 /* SimpleTicTacToeBoard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

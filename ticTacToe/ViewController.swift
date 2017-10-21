@@ -8,10 +8,7 @@
 
 import UIKit
 
-// add pics to make look better
-
 class ViewController: UIViewController {
-    
     @IBOutlet var gameButton00: GameButton!
     @IBOutlet var gameButton01: GameButton!
     @IBOutlet var gameButton02: GameButton!
@@ -39,30 +36,30 @@ class ViewController: UIViewController {
     
     @IBAction func spacePressed(_ sender: GameButton) {
         if sender.currentImage == nil {
-            if ticTacTocBrain.turnNumber % 2 == 1 {
-                ticTacTocBrain.turnPlayerChose(playerKey: 1, x: sender.row, y: sender.column)
+            if ticTacTocBrain.currentTurnNumber() % 2 == 1 {
+                ticTacTocBrain.turnPlayerChose(playerKey: PlayerKey.player1, row: sender.row, col: sender.column)
                 sender.setImage(#imageLiteral(resourceName: "X_tictactoe"), for: .normal)
                 if ticTacTocBrain.hasPlayer1Won() {
                     player1HasWon()
                 } else {
-                    if ticTacTocBrain.turnNumber == 10 {
+                    if ticTacTocBrain.currentTurnNumber() == 10 {
                         gameIsATie()
                         return
                     }
-                    turnLabel.text = "Turn: \(ticTacTocBrain.turnNumber)"
+                    turnLabel.text = "Turn: \(ticTacTocBrain.currentTurnNumber())"
                     currentPlayerTurnLabel.text = "Player two's turn"
                 }
             } else {
-                ticTacTocBrain.turnPlayerChose(playerKey: -1, x: sender.row, y: sender.column)
+                ticTacTocBrain.turnPlayerChose(playerKey: PlayerKey.player2, row: sender.row, col: sender.column)
                 sender.setImage(#imageLiteral(resourceName: "O_tictactoe"), for: .normal)
                 if ticTacTocBrain.hasPlayer2Won() {
                     player2HasWon()
                 } else {
-                    if ticTacTocBrain.turnNumber == 10 {
+                    if ticTacTocBrain.currentTurnNumber() == 10 {
                         gameIsATie()
                         return
                     }
-                    turnLabel.text = "Turn: \(ticTacTocBrain.turnNumber)"
+                    turnLabel.text = "Turn: \(ticTacTocBrain.currentTurnNumber())"
                     currentPlayerTurnLabel.text = "Player one's turn"
                 }
             }
@@ -70,9 +67,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func newGameButtonPressed(_ sender: UIButton) {
-        for button in gameButtons {
-            button.setImage(nil, for: .normal)
-        }
+        clearButtons()
         newGameButton.setImage(#imageLiteral(resourceName: "resetGame"), for: .normal)
         enableGameButtons()
         ticTacTocBrain.resetGame()
@@ -93,7 +88,7 @@ class ViewController: UIViewController {
         currentPlayerTurnLabel.text = "Player ONE has WON!"
         currentPlayerTurnLabel.backgroundColor = UIColor.red
         currentPlayerTurnLabel.textColor = UIColor.white
-        player1WinsLabel.text = "Player One Wins: \(ticTacTocBrain.player1Wins)"
+        player1WinsLabel.text = "Player One Wins: \(ticTacTocBrain.totalPlayer1Wins())"
         disableGameButtons()
         newGameButton.setImage(#imageLiteral(resourceName: "newGame"), for: .normal)
     }
@@ -102,9 +97,15 @@ class ViewController: UIViewController {
         currentPlayerTurnLabel.text = "Player TWO has WON!"
         currentPlayerTurnLabel.backgroundColor = UIColor.blue
         currentPlayerTurnLabel.textColor = UIColor.white
-        player2WinsLabel.text = "Player Two Wins: \(ticTacTocBrain.player2Wins)"
+        player2WinsLabel.text = "Player Two Wins: \(ticTacTocBrain.totalPlayer2Wins())"
         disableGameButtons()
         newGameButton.setImage(#imageLiteral(resourceName: "newGame"), for: .normal)
+    }
+    
+    func clearButtons() {
+        for button in gameButtons {
+            button.setImage(nil, for: .normal)
+        }
     }
     
     func enableGameButtons() {
@@ -118,5 +119,4 @@ class ViewController: UIViewController {
             button.isEnabled = false
         }
     }
-    
 }

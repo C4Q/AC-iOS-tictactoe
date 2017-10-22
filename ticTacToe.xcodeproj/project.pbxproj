@@ -14,6 +14,7 @@
 		54B8BB8B1F7C28D90087A677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B8BB891F7C28D90087A677 /* Main.storyboard */; };
 		54B8BB8D1F7C28D90087A677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B8BB8C1F7C28D90087A677 /* Assets.xcassets */; };
 		54B8BB901F7C28D90087A677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B8BB8E1F7C28D90087A677 /* LaunchScreen.storyboard */; };
+		816FA2E61F9AFA0D0089C8EF /* CheckSetDecide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816FA2E51F9AFA0D0089C8EF /* CheckSetDecide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		54B8BB8C1F7C28D90087A677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54B8BB8F1F7C28D90087A677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54B8BB911F7C28D90087A677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816FA2E51F9AFA0D0089C8EF /* CheckSetDecide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSetDecide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				5432548B1F7EF48100E19CCF /* GameButton.swift */,
 				543254891F7EE5B300E19CCF /* ticTacToeBrain.swift */,
 				54B8BB891F7C28D90087A677 /* Main.storyboard */,
+				816FA2E51F9AFA0D0089C8EF /* CheckSetDecide.swift */,
 				54B8BB8C1F7C28D90087A677 /* Assets.xcassets */,
 				54B8BB8E1F7C28D90087A677 /* LaunchScreen.storyboard */,
 				54B8BB911F7C28D90087A677 /* Info.plist */,
@@ -145,6 +148,7 @@
 				54B8BB881F7C28D90087A677 /* ViewController.swift in Sources */,
 				5432548C1F7EF48100E19CCF /* GameButton.swift in Sources */,
 				5432548A1F7EE5B300E19CCF /* ticTacToeBrain.swift in Sources */,
+				816FA2E61F9AFA0D0089C8EF /* CheckSetDecide.swift in Sources */,
 				54B8BB861F7C28D90087A677 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

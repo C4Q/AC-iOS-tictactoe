@@ -9,7 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let xoChechSet = CheckSetDecide()
+    @IBOutlet weak var playerTurnLabel: UILabel!
+    @IBAction func cellButton(_ sender: UIButton) {
+        xoChechSet.checkPlayerSetImage(senderButton: sender, playerTurnLabel: playerTurnLabel)
+        xoChechSet.isItDraw(dictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
+    }
+    @IBAction func resetButton(_ sender: UIButton) {
+        print(xoChechSet.myDictionary)
+        xoChechSet.myDictionary = xoChechSet.resestCells(inputDictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
+    }
+
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         //Execute code here
     }

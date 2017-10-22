@@ -17,6 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundOne" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-EI-xlx">
+                                <rect key="frame" x="-1" y="0.0" width="415" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.38309228584759114" blue="0.053272544732468008" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <button opaque="NO" alpha="0.89999997615814209" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3k-En-5oC" customClass="GameButton" customModule="tictactoe" customModuleProvider="target">
                                 <rect key="frame" x="62" y="148" width="83" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -188,7 +193,19 @@
                                     <action selector="gameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jEh-7Z-6WA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player turn label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlI-xW-18I">
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckD-b7-gVh">
+                                <rect key="frame" x="167" y="405" width="85" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.88448743549999997" blue="0.1227133861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fyf-R8-SA3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814198" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player turn label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlI-xW-18I">
                                 <rect key="frame" x="98" y="77" width="217" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -210,7 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player win label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyD-eY-GRn">
-                                <rect key="frame" x="0.0" y="484" width="414" height="82"/>
+                                <rect key="frame" x="-1" y="469" width="414" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.01152188553" green="0.017211294419999999" blue="0.0126035348" alpha="0.3028413955" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
@@ -221,23 +238,16 @@
                                 <rect key="frame" x="38" y="552" width="339" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckD-b7-gVh">
-                                <rect key="frame" x="167" y="405" width="85" height="37"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drawImage" translatesAutoresizingMaskIntoConstraints="NO" id="G64-yN-nGN">
+                                <rect key="frame" x="156" y="530" width="111" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="New Game">
-                                    <color key="titleColor" red="0.028013952370000001" green="0.27507463539999999" blue="0.76285597000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fyf-R8-SA3"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.028013952370000001" green="0.27507463539999999" blue="0.76285597000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="R4L-EI-xlx" id="s9D-vs-tTp"/>
                         <outlet property="btnEight" destination="NEG-df-YLQ" id="rcd-vB-KgU"/>
                         <outlet property="btnFive" destination="klR-XG-yKV" id="Ja5-94-vb0"/>
                         <outlet property="btnFour" destination="Ctb-WU-Q33" id="V37-B5-mQW"/>
@@ -247,6 +257,7 @@
                         <outlet property="btnSix" destination="Fcu-mR-Cdr" id="HJm-lT-hNJ"/>
                         <outlet property="btnThree" destination="i7P-aR-Xa7" id="LOj-yg-nvi"/>
                         <outlet property="btnTwo" destination="IZa-Gt-cod" id="CqK-FC-1zf"/>
+                        <outlet property="drawImage" destination="G64-yN-nGN" id="9UA-wp-7Y4"/>
                         <outlet property="newGameBtn" destination="ckD-b7-gVh" id="HFT-va-wqu"/>
                         <outlet property="playerOneScore" destination="bNs-MS-LYR" id="cCI-Dc-gSU"/>
                         <outlet property="playerTurnLabel" destination="xlI-xW-18I" id="ROb-xp-vtx"/>
@@ -257,10 +268,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211.59420289855075" y="-482.60869565217394"/>
+            <point key="canvasLocation" x="-109" y="-1139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0jh-KY-Q4w">
+            <objects>
+                <viewController id="xAU-wY-sIj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hBu-UI-gJG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2K-HC-O7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="-276"/>
         </scene>
     </scenes>
     <resources>
+        <image name="backgroundOne" width="284" height="177"/>
+        <image name="drawImage" width="171" height="299"/>
         <image name="winImage" width="300" height="164"/>
     </resources>
 </document>

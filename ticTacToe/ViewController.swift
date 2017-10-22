@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winImage: UIImageView!
     @IBOutlet weak var drawImage: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     
     var buttons: [GameButton] = []
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
         playerTurnLabel.text = "Player One Turn!"
         playerWinLabel.isHidden = true
         winImage.isHidden = true
-        //drawImage.isHidden = true
+        drawImage.isHidden = true
         //updateScore()
         buttons = [btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine]
     }
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
             playerWinLabel.text = "It's a DRAW!"
             playerWinLabel.isHidden = false
             //sets draw UIImage
-            //drawImage.isHidden = false
+            drawImage.isHidden = false
         }
         gameRules.playerTurn(player: gameRules.player)
     }
@@ -101,7 +102,7 @@ class ViewController: UIViewController {
             newGameBtn.isHidden = false
         }
         winImage.isHidden = true
-        //drawImage.isHidden = true
+        drawImage.isHidden = true
         gameRules.playerReset()
         gameRules.player = true
         playerWinLabel.isHidden = true

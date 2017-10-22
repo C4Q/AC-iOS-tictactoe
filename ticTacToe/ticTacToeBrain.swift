@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+var viewController = ViewController()
 class ticTacToeBrain {
     var playerOneArray = Set<Int>()
     var playerTwoArray = Set<Int>()

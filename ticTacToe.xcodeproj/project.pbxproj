@@ -58,13 +58,13 @@
 		54B8BB841F7C28D90087A677 /* ticTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				54B8BB851F7C28D90087A677 /* AppDelegate.swift */,
 				54B8BB871F7C28D90087A677 /* ViewController.swift */,
-				5432548B1F7EF48100E19CCF /* GameButton.swift */,
 				543254891F7EE5B300E19CCF /* ticTacToeBrain.swift */,
 				54B8BB891F7C28D90087A677 /* Main.storyboard */,
+				5432548B1F7EF48100E19CCF /* GameButton.swift */,
 				54B8BB8C1F7C28D90087A677 /* Assets.xcassets */,
 				54B8BB8E1F7C28D90087A677 /* LaunchScreen.storyboard */,
+				54B8BB851F7C28D90087A677 /* AppDelegate.swift */,
 				54B8BB911F7C28D90087A677 /* Info.plist */,
 			);
 			path = ticTacToe;

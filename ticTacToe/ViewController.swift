@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button31: GameButton!
     @IBOutlet weak var button32: GameButton!
     @IBOutlet weak var button33: GameButton!
+    
     @IBOutlet weak var jonSnow: UIImageView!
     @IBOutlet weak var nightKing: UIImageView!
     
@@ -40,6 +41,12 @@ class ViewController: UIViewController {
         p1WinCount.isHidden = true
         p2WinCount.isHidden = true
         p1p2WinLabel.isHidden = true
+        allButtons = [button11, button12, button13, button21, button22, button23, button31, button32, button33]
+        for button in allButtons {
+            button.layer.cornerRadius = 5
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor.black.cgColor
+        }
     }
     
     @IBAction func gameButtons(_ sender: GameButton) {

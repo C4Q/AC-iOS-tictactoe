@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet var gridButtons: [GameButton]!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     var ticTacToe = ticTacToeBrain()
     
@@ -80,10 +81,12 @@ class ViewController: UIViewController {
         roundEdgesOf(label: gameTitle)
         roundEdgesOf(label: myNameLabel)
         roundEdgesOf(button: playButton)
+        roundEdgesOf(button: resetButton)
         gameTitle.isHidden = false
         myNameLabel.isHidden = false
         playButton.isHidden = false
         playButton.isEnabled = true
+        resetButton.isEnabled = true
     }
     
     func hideTitleScreen() {
@@ -96,6 +99,7 @@ class ViewController: UIViewController {
         gameItems.forEach{$0.isHidden = true}
         resultLabel.isHidden = true
         playAgainButton.isHidden = true
+        resetButton.isHidden = true
     }
     
     func startGame() {
@@ -112,6 +116,7 @@ class ViewController: UIViewController {
             $0.setBackgroundImage(nil, for: .normal)
             $0.isEnabled = true
         }
+        resetButton.isHidden = false
     }
     
     func endGame() {

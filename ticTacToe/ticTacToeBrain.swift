@@ -59,6 +59,7 @@ class ticTacToeBrain { //the model
     
     func resetGame() {
         win = false
+        moveCount = 0
         playerTurn = .one
         board = [[.blank, .blank, .blank],
                  [.blank, .blank, .blank],

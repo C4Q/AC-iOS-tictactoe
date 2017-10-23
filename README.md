@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# AC-iOS-tictactoe
+=======
 ## Unit 2, Week 1 Homework
 
 ```
@@ -80,3 +83,4 @@ For some extra reading on this subject, check out: http://nshipster.com/ibinspec
 4. Feel free to `commit` early and often as a "checkpoint" of sorts to save your work.
 5. Make a pull request from **your** fork to C4Q/master at the Github site once you're done.
 6. Take a breather. We did it, Reddit!
+>>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc

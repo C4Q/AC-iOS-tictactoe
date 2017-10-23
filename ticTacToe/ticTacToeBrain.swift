@@ -52,11 +52,11 @@ class WinChecker {
             rowSum1 = row.reduce(0, { x, y in x + y})
             if rowSum1 == 3 {
                 winDetected = true
-                winner = "Player 1"
+                winner = "Player 1 Wins!"
                 p1WinCount += 1
             } else if rowSum1 == -3 {
                 winDetected = true
-                winner = "Player 2"
+                winner = "Player 2 Wins!"
                 p2WinCount += 1
                 }
             }
@@ -70,11 +70,11 @@ class WinChecker {
             }
             if columnSum == 3{
                 winDetected = true
-                winner = "Player 1"
+                winner = "Player 1 Wins!"
                 p1WinCount += 1
             } else if columnSum == -3{
                 winDetected = true
-                winner = "Player 2"
+                winner = "Player 2 Wins!"
                 p2WinCount += 1
                 }
             }
@@ -83,11 +83,11 @@ class WinChecker {
         func diagonalCheck() {
         if grid[0][0] + grid[1][1] + grid[2][2] == 3 || grid[0][2] + grid[1][1] + grid[2][0] == 3 {
             winDetected = true
-            winner = "Player 1"
+            winner = "Player 1 Wins!"
             p1WinCount += 1
         } else if grid[0][0] + grid[1][1] + grid[2][2] == -3 || grid[0][2] + grid[1][1] + grid[2][0] == -3 {
             winDetected = true
-            winner = "Player 2"
+            winner = "Player 2 Wins!"
             p2WinCount += 1
             }
         }
@@ -97,7 +97,10 @@ class WinChecker {
                 return row.filter({ element in return element == 0 })
                 
             }
-            draw = flattened.isEmpty
+            if flattened.isEmpty {
+                draw = true
+                winner = "Draw"
+            }
         }
         
         rowCheck()

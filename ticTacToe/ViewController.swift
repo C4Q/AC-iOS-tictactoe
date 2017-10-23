@@ -58,6 +58,16 @@ class ViewController: UIViewController {
         }
     }
     
+    private func resultConditions() {
+        gameBanner.text = "\(winSearch.winner)"
+        playerOneWinCount.isHidden = false
+        playerOneWinCount.text = "P1 Wins: \(winSearch.p1WinCount)"
+        playerTwoWinCount.isHidden = false
+        playerTwoWinCount.text = "P2 Wins: \(winSearch.p2WinCount)"
+        newGameButton.isHidden = false
+        disableAllButtons()
+    }
+    
     @IBAction func newGameButton(_ sender: UIButton) {
         gameBanner.text = "Tic-Tac-Toe"
         playerOneTurn.isHidden = false
@@ -91,13 +101,7 @@ class ViewController: UIViewController {
                 sender.setImage(#imageLiteral(resourceName: "letter-x"), for: .normal)
                 winSearch.check(grid: ticTacToe.grid)
                 if winSearch.winDetected == true {
-                    gameBanner.text = "\(winSearch.winner) Wins!"
-                    playerOneWinCount.isHidden = false
-                    playerOneWinCount.text = "P1 Wins: \(winSearch.p1WinCount)"
-                    playerTwoWinCount.isHidden = false
-                    playerTwoWinCount.text = "P2 Wins: \(winSearch.p2WinCount)"
-                    newGameButton.isHidden = false
-                    disableAllButtons()
+                    resultConditions()
                 } else {
                 playerOneTurn.isHidden = true
                 playerTwoTurn.isHidden = false
@@ -106,13 +110,7 @@ class ViewController: UIViewController {
                 sender.setImage(#imageLiteral(resourceName: "letter-o"), for: .normal)
                 winSearch.check(grid: ticTacToe.grid)
                 if winSearch.winDetected == true {
-                    gameBanner.text = "\(winSearch.winner) Wins!"
-                    playerOneWinCount.isHidden = false
-                    playerOneWinCount.text = "P1 Wins: \(winSearch.p1WinCount)"
-                    playerTwoWinCount.isHidden = false
-                    playerTwoWinCount.text = "P2 Wins: \(winSearch.p2WinCount)"
-                    newGameButton.isHidden = false
-                    disableAllButtons()
+                    resultConditions()
                 } else {
                 playerOneTurn.isHidden = false
                 playerTwoTurn.isHidden = true
@@ -123,13 +121,7 @@ class ViewController: UIViewController {
         }
         
         if winSearch.draw {
-            gameBanner.text = "Draw!"
-            playerOneWinCount.isHidden = false
-            playerOneWinCount.text = "P1 Wins: \(winSearch.p1WinCount)"
-            playerTwoWinCount.isHidden = false
-            playerTwoWinCount.text = "P2 Wins: \(winSearch.p2WinCount)"
-            newGameButton.isHidden = false
-            disableAllButtons()
+            resultConditions()
         }
     }
 }

@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         xoChechSet.isItDraw(dictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
     }
     @IBAction func resetButton(_ sender: UIButton) {
-        print(xoChechSet.myDictionary)
         xoChechSet.myDictionary = xoChechSet.resestCells(inputDictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
     }
 

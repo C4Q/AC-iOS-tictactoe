@@ -1,56 +1,56 @@
 //
 //  AppDelegate.swift
-<<<<<<< HEAD
+
 //  tictactoehomework
 //
 //  Created by C4Q on 10/20/17.
 //  Copyright © 2017 C4Q. All rights reserved.
-=======
+
 //  ticTacToe
 //
 //  Created by C4Q  on 9/27/17.
 //  Copyright © 2017 C4Q . All rights reserved.
->>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc
+
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-<<<<<<< HEAD
+
     
     var window: UIWindow?
     
     
-=======
+
 
     var window: UIWindow?
 
 
->>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc
+    
+
+
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc
+    
+
+
+
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-<<<<<<< HEAD
+
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-=======
+
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
@@ -80,6 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
->>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc
+
 }
 

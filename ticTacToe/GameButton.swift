@@ -2,7 +2,7 @@
 //  GameButton.swift
 //  ticTacToe
 //
-//  Created by C4Q  on 9/29/17.
+//  Created by Tyler Zhao on 10/21/2017.
 //  Copyright © 2017 C4Q . All rights reserved.
 //
 
@@ -13,3 +13,4 @@ class GameButton: UIButton {
     @IBInspectable var row: Int = 0
     @IBInspectable var column: Int = 0
 }
+

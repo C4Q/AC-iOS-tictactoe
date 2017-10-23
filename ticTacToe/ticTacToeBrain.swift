@@ -7,7 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class ticTacToeBrain {
-
+    
+    
+    
+    var turnCounter = 0
+    
+    
+    func showCurrentTurn() -> String {
+        return  (turnCounter % 2 == 0 ? "O" : "X")
+        
+    }
+    
 }
+

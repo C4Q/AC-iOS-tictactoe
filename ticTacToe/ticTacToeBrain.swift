@@ -9,5 +9,12 @@
 import Foundation
 
 class ticTacToeBrain {
+    
+    //Include game rules, winning combos, draw
 
+    
+    
+    
+
+    
 }

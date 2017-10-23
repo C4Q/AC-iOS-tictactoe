@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     let xoChechSet = CheckSetDecide()
+    
+    @IBOutlet weak var PlayerOneScoreLabel: UILabel!
+    
+    @IBOutlet weak var PlayerTwoScoreLabel: UILabel!
+    
     @IBOutlet weak var playerTurnLabel: UILabel!
     @IBAction func cellButton(_ sender: UIButton) {
-        xoChechSet.checkPlayerSetImage(senderButton: sender, playerTurnLabel: playerTurnLabel)
+        xoChechSet.checkPlayerSetImage(senderButton: sender, playerTurnLabel: playerTurnLabel, scorePlayerOne: PlayerOneScoreLabel, scorePlayerTwo: PlayerTwoScoreLabel)
         xoChechSet.isItDraw(dictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
     }
     @IBAction func resetButton(_ sender: UIButton) {

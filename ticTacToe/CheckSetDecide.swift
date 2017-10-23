@@ -12,6 +12,8 @@ class CheckSetDecide {
     var player = 1
     var freeze = false
     var drawCounter = 0
+    var playerOneWins = 0
+    var playerTwoWins = 0
     var playerwins = [[2: 1, 3: 1, 1: 1],
                       [5: 1, 4: 1, 6: 1],
                       [7: 1, 8: 1, 9: 1],
@@ -31,7 +33,7 @@ class CheckSetDecide {
     var arrayOfButtons = [UIButton]()
     // key is the cell and value is the player
     var myDictionary:[Int:Int] = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0]
-    func getWinner(playerWins: [[Int:Int]], playerTurnLabel: UILabel, player:Int){
+    func getWinner(playerWins: [[Int:Int]], playerTurnLabel: UILabel, player:Int, scorePlayerOne: UILabel, scorePlayerTwo: UILabel){
         var counterPlayer1 = 0
         var counterPlayer2 = 0
         for dict in playerWins{
@@ -45,6 +47,8 @@ class CheckSetDecide {
             }
             if counterPlayer1 == 3{
                 playerTurnLabel.text = "player One wins"
+                playerOneWins += 1
+                scorePlayerOne.text = " Player One Score: \(playerOneWins)"
                 playerTurnLabel.isEnabled = false
                 freeze = true
                 break
@@ -52,6 +56,8 @@ class CheckSetDecide {
             if counterPlayer2 == 3{
                 playerTurnLabel.text = "player Two wins"
                 playerTurnLabel.isEnabled = false
+                playerTwoWins += 1
+                scorePlayerTwo.text = " Player Two score: \(playerTwoWins)"
                 freeze = true
                 break
             }
@@ -60,7 +66,7 @@ class CheckSetDecide {
         }
 
     }
-    func checkPlayerSetImage(senderButton: UIButton, playerTurnLabel: UILabel){
+    func checkPlayerSetImage(senderButton: UIButton, playerTurnLabel: UILabel, scorePlayerOne: UILabel, scorePlayerTwo: UILabel){
         if myDictionary[senderButton.tag] == 0{
             if player == 1 && freeze == false{
                 drawCounter += 1
@@ -68,7 +74,7 @@ class CheckSetDecide {
                 senderButton.setImage(#imageLiteral(resourceName: "X"), for: .normal)
                 playerTurnLabel.text = "Player two Turn place O"
                 myDictionary[senderButton.tag] = player
-                getWinner(playerWins: playerwins, playerTurnLabel: playerTurnLabel, player: player)
+                getWinner(playerWins: playerwins, playerTurnLabel: playerTurnLabel, player: player , scorePlayerOne: scorePlayerOne, scorePlayerTwo: scorePlayerTwo)
                 player = 2
             }
             else if player == 2 && freeze == false
@@ -78,7 +84,7 @@ class CheckSetDecide {
                 senderButton.setImage(#imageLiteral(resourceName: "O"), for: .normal)
                 playerTurnLabel.text = "Player One Turn place X"
                 myDictionary[senderButton.tag] = player
-                getWinner(playerWins: playerwins, playerTurnLabel: playerTurnLabel, player: player)
+                getWinner(playerWins: playerwins, playerTurnLabel: playerTurnLabel, player: player, scorePlayerOne: scorePlayerOne, scorePlayerTwo: scorePlayerTwo)
                 player = 1
             }
         }
@@ -100,6 +106,12 @@ class CheckSetDecide {
         freeze = false
         playerTurnLabel.isEnabled = true
         drawCounter = 0
+        if player == 1 {
+            playerTurnLabel.text = "Player one Turn"
+        }
+        else{
+            playerTurnLabel.text = "Player Two Turn"
+        }
         return mynewDict
     }
     func isItDraw(dictionary:[Int:Int], playerTurnLabel:UILabel) {
@@ -108,6 +120,4 @@ class CheckSetDecide {
             freeze = true
         }
     }
-    
-    
 }

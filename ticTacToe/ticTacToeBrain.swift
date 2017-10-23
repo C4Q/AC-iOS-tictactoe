@@ -15,6 +15,10 @@ var player2Won = false
 let blankSpace = "_"
 let xSymbol = "X"
 let oSymbol = "O"
+struct TicTacToeMove {
+    var x: String 
+    var o: String
+}
 var gameArray = [[blankSpace,blankSpace,blankSpace],
                  [blankSpace,blankSpace,blankSpace],
                  [blankSpace,blankSpace,blankSpace]]

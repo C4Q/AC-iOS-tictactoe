@@ -43,12 +43,14 @@ class ViewController: UIViewController {
     
     
     let move = ticTacToeBrain()
+    let character = TicTacToeMove.init(x: xSymbol, o: oSymbol)
+    
     
     @IBAction func enterMove(_ sender: GameButton) {
         move.enterMove()
                 if move.player1Turn {
             
-            gameArray[sender.row][sender.column] = oSymbol
+            gameArray[sender.row][sender.column] = character.o
             turnDisplay.text = "Player Two's Turn"
             sender.setBackgroundImage(#imageLiteral(resourceName: "tictactoe O"), for: .normal)
             move.gameResult()
@@ -64,7 +66,7 @@ class ViewController: UIViewController {
         }
             
         else {
-            gameArray[sender.row][sender.column] = xSymbol
+            gameArray[sender.row][sender.column] = character.x
             turnDisplay.text = "Player One's Turn"
             sender.setBackgroundImage(#imageLiteral(resourceName: "tictactoeX"), for: .normal)
             move.gameResult()

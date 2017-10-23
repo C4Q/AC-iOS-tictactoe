@@ -8,11 +8,12 @@
 
 import Foundation
 
-var currentPlayer = 1 //Cross
+var currentPlayer = 1 //X
 
 var xScore = 0
 var oScore = 0
 var gameActive = true
+var whoWon = 0
 
 var ticTacToeArr = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -24,14 +25,44 @@ let winningCombinationArr = [[0, 1, 2], [3, 4, 5],
 func resetScore() {
     xScore = 0
     oScore = 0
+    whoWon = 0
 }
 
-func gameActiveCheck() {
+func checkCombo() {
+    for combo in winningCombinationArr {
+        if ticTacToeArr[combo[0]] != 0 && ticTacToeArr[combo[0]] == ticTacToeArr[combo[1]]
+            && ticTacToeArr[combo[1]] == ticTacToeArr[combo[2]] {
+            
+            //x wins
+            if ticTacToeArr[combo[0]] == 1 {
+                xScore += 1
+                currentPlayer = 1
+                whoWon = 1
+                gameActive = false
+            //o wins
+            } else {
+                oScore += 1
+                whoWon = 2
+                gameActive = false
+            }
+        }
+    }
+    gameActive = false
     for i in ticTacToeArr {
         if i == 0 {
             gameActive = true
+            break
+       
+        //tie
+        } else if i != 0 && whoWon != 1 && whoWon != 2 {
+            whoWon = 3
         }
     }
 }
+
+
+
+
+
 
 

@@ -140,7 +140,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X goes first" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWU-ft-RuN">
-                                <rect key="frame" x="126" y="450" width="122" height="32"/>
+                                <rect key="frame" x="126" y="448" width="122" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -160,8 +160,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asL-Ux-br2">
-                                <rect key="frame" x="142" y="518" width="90" height="40"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asL-Ux-br2">
+                                <rect key="frame" x="112" y="497" width="150" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -172,12 +172,34 @@
                                     <action selector="gameResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXl-am-MnQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G9-qh-RCr">
+                                <rect key="frame" x="112" y="554" width="150" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="gameResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ni4-YA-dtv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="b1" destination="nX5-7a-F64" id="UIL-QU-9DC"/>
+                        <outlet property="b2" destination="KWl-te-rhE" id="SoV-U6-623"/>
+                        <outlet property="b3" destination="Shm-aw-IOe" id="OuN-3V-sAE"/>
+                        <outlet property="b4" destination="CcB-Yj-XfX" id="u0d-iF-cvt"/>
+                        <outlet property="b5" destination="MjF-Av-fuG" id="Koi-vF-nB7"/>
+                        <outlet property="b6" destination="P7b-7N-qfZ" id="zSE-hI-UuZ"/>
+                        <outlet property="b7" destination="Z7A-6c-JWD" id="nLT-fg-kEu"/>
+                        <outlet property="b8" destination="JUa-L0-IjE" id="T89-Nw-bCq"/>
+                        <outlet property="b9" destination="6M1-PE-nte" id="S6u-vC-CcD"/>
                         <outlet property="osScore" destination="OIm-Qa-tBY" id="YSb-fI-zhi"/>
+                        <outlet property="playAgainButton" destination="4G9-qh-RCr" id="Fo9-WT-XJq"/>
                         <outlet property="titleLabel" destination="azz-Va-dGu" id="HgZ-lz-NXA"/>
                         <outlet property="whosTurnLabel" destination="GWU-ft-RuN" id="sVW-BQ-0tY"/>
                         <outlet property="xsScore" destination="QvB-Ew-nSR" id="EPX-ZK-LlW"/>

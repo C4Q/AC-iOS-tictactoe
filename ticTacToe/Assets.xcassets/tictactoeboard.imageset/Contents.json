@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "tictactoeboard.png",
       "scale" : "1x"
     },
     {

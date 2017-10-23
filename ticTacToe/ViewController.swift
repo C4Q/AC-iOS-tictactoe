@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-<<<<<<< HEAD
+
     
     @IBOutlet var label: UILabel!
     
@@ -79,11 +79,11 @@ class ViewController: UIViewController {
         }
     }
     
-=======
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Execute code here
     }
->>>>>>> ca02a193e6794d911c36c69e29d8f8fb80d027bc
+
 }
 

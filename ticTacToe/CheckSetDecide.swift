@@ -109,7 +109,7 @@ class CheckSetDecide {
                 playerTurn = 1
             }
         }
-        if drawCounter > 8{
+        if drawCounter > 8 && player.isWinner == false{
             player.playerMessage = "it is a draw"
             player.isWinner = false
         }

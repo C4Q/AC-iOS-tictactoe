@@ -117,7 +117,6 @@ class ViewController: UIViewController {
                 }
             }
             ticTacToe.switchPlayer()
-            
         }
         
         if winSearch.draw {

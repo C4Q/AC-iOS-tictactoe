@@ -11,29 +11,24 @@ import UIKit
 
 class TicTacToeBrain {
     var grid = [[0,0,0],
-                         [0,0,0],
-                         [0,0,0]]
-
-    var buttonsPressed = 0
+                [0,0,0],
+                [0,0,0]]
     var player = 1
     
     func switchPlayer() {
         if player == 1{
             player = -1
-            buttonsPressed += 1
         } else {
             player = 1
-            buttonsPressed += 1
         }
     }
     
     func resetBoard() {
         grid = [[0,0,0],
-                         [0,0,0],
-                         [0,0,0]]
+                [0,0,0],
+                [0,0,0]]
         player = 1
     }
-    
 }
 
 
@@ -43,7 +38,6 @@ class WinChecker {
     var winDetected = false
     var draw = false
     var winner = ""
-    
     
     func check(grid: [[Int]]) {
         func rowCheck() {

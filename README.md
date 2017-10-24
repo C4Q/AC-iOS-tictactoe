@@ -1,5 +1,5 @@
 ## Unit 2, Week 1 Homework
-
+#### Yaseen
 ```
 ::::    :::  :::::::: ::::::::::: 
 :+:+:   :+: :+:    :+:    :+:
@@ -17,7 +17,6 @@ ______  ___ _____ _____ _      _____ _____ _   _ ___________
                                                              
 ```
 
-Lucky you. Lucky, lucky you.
 
 ## Tic Tac Toe: Player vs. Player
 ### Exercise

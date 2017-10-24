@@ -8,12 +8,16 @@
 
 import Foundation
 import UIKit
+
 class CheckSetDecide {
-    var player = 1
+    var playerTurn = 1
     var freeze = false
     var drawCounter = 0
+    
     var playerOneWins = 0
     var playerTwoWins = 0
+    var arrayOfButtons = [UIButton]()
+    var myDictionary:[Int:Int] = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0]
     var playerwins = [[2: 1, 3: 1, 1: 1],
                       [5: 1, 4: 1, 6: 1],
                       [7: 1, 8: 1, 9: 1],
@@ -30,10 +34,31 @@ class CheckSetDecide {
                       [4: 2, 1: 2, 7: 2],
                       [2: 2, 5: 2, 8: 2],
                       [6: 2, 3: 2, 9: 2]]
-    var arrayOfButtons = [UIButton]()
-    // key is the cell and value is the player
-    var myDictionary:[Int:Int] = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0]
-    func getWinner(playerWins: [[Int:Int]], playerTurnLabel: UILabel, player:Int, scorePlayerOne: UILabel, scorePlayerTwo: UILabel){
+    class Player{
+        var playerName: String
+        var playerScore: Int
+        var playerMessage: String
+        var isWinner: Bool
+        init(playerScore: Int, playerMessage:String, playerName: String, isWinner: Bool) {
+            self.playerScore = playerScore
+            
+            self.playerMessage = playerMessage
+            self.playerName = playerName
+            self.isWinner = isWinner
+        }
+        convenience init() {
+            self.init(playerScore: 0, playerMessage: " ", playerName: "Player One", isWinner: false)
+        }
+        func resetScore(){
+            self.playerScore = 0
+            self.playerMessage = ""
+            self.playerName = "Player One"
+            self.isWinner = false
+        }
+    }
+    
+    
+    func winningDecision(playerWins: [[Int:Int]], player: Player){
         var counterPlayer1 = 0
         var counterPlayer2 = 0
         for dict in playerWins{
@@ -46,78 +71,61 @@ class CheckSetDecide {
                 }
             }
             if counterPlayer1 == 3{
-                playerTurnLabel.text = "player One wins"
+                player.playerMessage = "player One wins"
+                player.isWinner = true
                 playerOneWins += 1
-                scorePlayerOne.text = " Player One Score: \(playerOneWins)"
-                playerTurnLabel.isEnabled = false
-                freeze = true
+                //                freeze = true
                 break
             }
             if counterPlayer2 == 3{
-                playerTurnLabel.text = "player Two wins"
-                playerTurnLabel.isEnabled = false
+                player.playerMessage = "player Two wins"
+                player.isWinner = true
                 playerTwoWins += 1
-                scorePlayerTwo.text = " Player Two score: \(playerTwoWins)"
-                freeze = true
+                //                freeze = true
                 break
             }
             counterPlayer2 = 0
             counterPlayer1 = 0
         }
-
     }
-    func checkPlayerSetImage(senderButton: UIButton, playerTurnLabel: UILabel, scorePlayerOne: UILabel, scorePlayerTwo: UILabel){
+    func getPlayer(senderButton: UIButton) -> Player{
+        let player = Player()
+        print(senderButton.tag)
         if myDictionary[senderButton.tag] == 0{
-            if player == 1 && freeze == false{
+            if playerTurn == 1 && freeze == false{
                 drawCounter += 1
                 arrayOfButtons.append(senderButton)
-                senderButton.setImage(#imageLiteral(resourceName: "X"), for: .normal)
-                playerTurnLabel.text = "Player two Turn place O"
-                myDictionary[senderButton.tag] = player
-                getWinner(playerWins: playerwins, playerTurnLabel: playerTurnLabel, player: player , scorePlayerOne: scorePlayerOne, scorePlayerTwo: scorePlayerTwo)
-                player = 2
+                player.playerName = "Player One"
+                player.playerMessage = "Player two Turn place O"
+                myDictionary[senderButton.tag] = playerTurn
+                winningDecision(playerWins: playerwins, player: player)
+                playerTurn = 2
             }
-            else if player == 2 && freeze == false
+            else if playerTurn == 2 && freeze == false
             {
                 drawCounter += 1
                 arrayOfButtons.append(senderButton)
-                senderButton.setImage(#imageLiteral(resourceName: "O"), for: .normal)
-                playerTurnLabel.text = "Player One Turn place X"
-                myDictionary[senderButton.tag] = player
-                getWinner(playerWins: playerwins, playerTurnLabel: playerTurnLabel, player: player, scorePlayerOne: scorePlayerOne, scorePlayerTwo: scorePlayerTwo)
-                player = 1
+                player.playerName = "Player Two"
+                player.playerMessage = "Player One Turn place X"
+                myDictionary[senderButton.tag] = playerTurn
+                winningDecision(playerWins: playerwins, player: player)
+                playerTurn = 1
             }
         }
         if drawCounter > 8{
-            playerTurnLabel.text = "it is a draw"
+            player.playerMessage = "it is a draw"
+            player.isWinner = false
         }
+        return player
     }
-    
-    
-    func resestCells(inputDictionary: [Int:Int], playerTurnLabel:UILabel)->[Int:Int]{
+    func resetCells(inputDictionary: [Int:Int])->[Int:Int]{
         var mynewDict = inputDictionary
         for (key, _) in mynewDict{
             mynewDict.updateValue(0, forKey: key)
         }
-        for button in arrayOfButtons{
-            button.setImage(nil, for: .normal)
-        }
-        playerTurnLabel.text = "Player One!! Play"
-        freeze = false
-        playerTurnLabel.isEnabled = true
         drawCounter = 0
-        if player == 1 {
-            playerTurnLabel.text = "Player one Turn"
-        }
-        else{
-            playerTurnLabel.text = "Player Two Turn"
-        }
+        freeze = false
         return mynewDict
     }
-    func isItDraw(dictionary:[Int:Int], playerTurnLabel:UILabel) {
-        if !dictionary.values.contains(0){
-            playerTurnLabel.text = " It is a draw"
-            freeze = true
-        }
-    }
 }
+

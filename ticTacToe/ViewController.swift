@@ -17,11 +17,47 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playerTurnLabel: UILabel!
     @IBAction func cellButton(_ sender: UIButton) {
-        xoChechSet.checkPlayerSetImage(senderButton: sender, playerTurnLabel: playerTurnLabel, scorePlayerOne: PlayerOneScoreLabel, scorePlayerTwo: PlayerTwoScoreLabel)
-        xoChechSet.isItDraw(dictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
+        
+        let myCell = xoChechSet.getPlayer(senderButton: sender)
+        print(myCell.playerName)
+        
+        if myCell.playerName == "Player One" && xoChechSet.freeze == false{
+            sender.setImage(#imageLiteral(resourceName: "X"), for: .normal)
+            sender.isEnabled = false
+            playerTurnLabel.text = myCell.playerMessage
+            if myCell.isWinner{
+                xoChechSet.freeze = true
+                PlayerOneScoreLabel.text = "Player One Score: \(xoChechSet.playerOneWins)"
+            }
+            print(xoChechSet.myDictionary)
+            print(xoChechSet.freeze)
+            
+        }
+        else if myCell.playerName == "Player Two" && xoChechSet.freeze == false{
+            sender.setImage(#imageLiteral(resourceName: "O"), for: .normal)
+            sender.isEnabled = false
+            playerTurnLabel.text = myCell.playerMessage
+            if myCell.isWinner{
+                xoChechSet.freeze = true
+                PlayerTwoScoreLabel.text = "Player Two Score: \(xoChechSet.playerTwoWins)"
+            }
+            print(xoChechSet.myDictionary)
+            print(xoChechSet.freeze)
+        }
     }
+        
     @IBAction func resetButton(_ sender: UIButton) {
-        xoChechSet.myDictionary = xoChechSet.resestCells(inputDictionary: xoChechSet.myDictionary, playerTurnLabel: playerTurnLabel)
+        xoChechSet.myDictionary = xoChechSet.resetCells(inputDictionary: xoChechSet.myDictionary)
+        for button in xoChechSet.arrayOfButtons{
+            button.setImage(nil, for: .normal)
+            button.isEnabled = true
+        }
+        if xoChechSet.playerTurn == 1{
+            playerTurnLabel.text = "Player One Play"
+        }
+        else{
+            playerTurnLabel.text = "Player Two Play"
+        }
     }
 
     override func viewDidLoad() {

@@ -13,7 +13,6 @@ class CheckSetDecide {
     var playerTurn = 1
     var freeze = false
     var drawCounter = 0
-    
     var playerOneWins = 0
     var playerTwoWins = 0
     var arrayOfButtons = [UIButton]()
@@ -56,8 +55,6 @@ class CheckSetDecide {
             self.isWinner = false
         }
     }
-    
-    
     func winningDecision(playerWins: [[Int:Int]], player: Player){
         var counterPlayer1 = 0
         var counterPlayer2 = 0

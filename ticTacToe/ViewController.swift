@@ -101,25 +101,10 @@ class ViewController: UIViewController {
         player1Won = false
         player2Won = false
         turnCounter = 0
-        
-        button1_1.setBackgroundImage(nil, for: .normal)
-        button1_1.isEnabled = true
-        button1_2.setBackgroundImage(nil, for: .normal)
-        button1_2.isEnabled = true
-        button1_3.setBackgroundImage(nil, for: .normal)
-        button1_3.isEnabled = true
-        button2_1.setBackgroundImage(nil, for: .normal)
-        button2_1.isEnabled = true
-        button2_2.setBackgroundImage(nil, for: .normal)
-        button2_2.isEnabled = true
-        button2_3.setBackgroundImage(nil, for: .normal)
-        button2_3.isEnabled = true
-        button3_1.setBackgroundImage(nil, for: .normal)
-        button3_1.isEnabled = true
-        button3_2.setBackgroundImage(nil, for: .normal)
-        button3_2.isEnabled = true
-        button3_3.setBackgroundImage(nil, for: .normal)
-        button3_3.isEnabled = true
+        for button in myButtons {
+            button.setBackgroundImage(nil, for: .normal)
+            button.isEnabled = true
+        }
     }
     
     

@@ -5,7 +5,6 @@
 //  Created by C4Q  on 9/27/17.
 //  Copyright © 2017 C4Q . All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -49,12 +48,12 @@ class ViewController: UIViewController {
         gameRules.turnCounter += 1
         if gameRules.player {
             //playerOne
-            gameRules.playerOneArray.insert(sender.tag)
+            gameRules.playerOneSet.insert(sender.tag)
             sender.setBackgroundImage(#imageLiteral(resourceName: "ximg"), for: .normal)
             playerTurnLabel.text = "Player Two's Turn!"
         } else {
             //playerTwo
-            gameRules.playerTwoArray.insert(sender.tag)
+            gameRules.playerTwoSet.insert(sender.tag)
             sender.setBackgroundImage(#imageLiteral(resourceName: "oimg") , for: .normal)
             playerTurnLabel.text = "Player One's Turn!"
         }
@@ -69,18 +68,23 @@ class ViewController: UIViewController {
                 playerWinLabel.isHidden = false
                 //sets win UIImage
                 winImage.isHidden = false
+                boardReset()
+              
+                
             } else {
                 playerWinLabel.text = "Player Two WINS!"
                 playerWinLabel.isHidden = false
                 winImage.isHidden = false
+                boardReset()
             }
             updateScore()
         } else if gameRules.win == false && gameRules.turnCounter == 9 {
-         playerTurnLabel.isHidden = true
+            playerTurnLabel.isHidden = true
             playerWinLabel.text = "It's a DRAW!"
             playerWinLabel.isHidden = false
             //sets draw UIImage
             drawImage.isHidden = false
+            boardReset()
         }
         gameRules.playerTurn(player: gameRules.player)
     }
@@ -93,6 +97,14 @@ class ViewController: UIViewController {
     @IBAction func newGame(_ sender: UIButton) {
         newGame()
     }
+    
+    //button reset function
+    func boardReset() {
+        for button in buttons {
+            button.isEnabled = false
+        }
+    }
+    
     
     //newGame function
     func newGame() {
@@ -111,7 +123,3 @@ class ViewController: UIViewController {
         
     }
 }
-
-
-
-

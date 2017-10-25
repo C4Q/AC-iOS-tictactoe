@@ -7,20 +7,16 @@
 //
 
 import Foundation
-var viewController = ViewController()
 class ticTacToeBrain {
-    var playerOneArray = Set<Int>()
-    var playerTwoArray = Set<Int>()
-    var win = false
+    var playerOneSet = Set<Int>()
+    var playerTwoSet = Set<Int>()
     var player: Bool = true
-    //counter for draw conditon
+    var win = false
+    //draw counter
     var turnCounter = 0
     //will keep winning score for each player
     var playerOneScore = 0
     var playerTwoScore = 0
-    
-    
-    //Possible wins
     let winCombinations: [Set<Int>] =   [[1,2,3],
                                          [4,5,6],
                                          [7,8,9],
@@ -29,17 +25,16 @@ class ticTacToeBrain {
                                          [3,6,9],
                                          [1,5,9],
                                          [3,5,7]]
-    
-    //Winning conditon function
+    //winning conditon function
     func winningCondition() {
         for possibleWins in winCombinations {
             if player {
-                if possibleWins.isSubset(of: playerOneArray){
+                if possibleWins.isSubset(of: playerOneSet){
                     win = true
                     playerOneScore += 1
                 }
             } else {
-                if possibleWins.isSubset(of: playerTwoArray){
+                if possibleWins.isSubset(of: playerTwoSet){
                     win = true
                     playerTwoScore += 1
                 }
@@ -47,15 +42,15 @@ class ticTacToeBrain {
         }
     }
     
-    //Player reset function
+   
+    //player reset function
     func playerReset () {
-        playerOneArray = Set<Int>()
-        playerTwoArray = Set<Int>()
+        playerOneSet = Set<Int>()
+        playerTwoSet = Set<Int>()
         turnCounter = 0
         win = false
     }
-    
-    //Player turn function
+    //player turn function
     func playerTurn(player: Bool) {
         if player {
             self.player = false //player two

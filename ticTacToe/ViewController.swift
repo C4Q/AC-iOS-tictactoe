@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 //	var playerTwoMatch = 0
 	var boardMoves = 0
 	var currentPlayer: Int = 1 //starts game at player 1
-	
+	 
 	@IBOutlet weak var topLeft: UIButton!
 	@IBOutlet weak var topMid: UIButton!
 	@IBOutlet weak var topRight: UIButton!

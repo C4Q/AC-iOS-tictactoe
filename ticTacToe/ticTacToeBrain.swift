@@ -32,11 +32,13 @@ class ticTacToeBrain {
     // this func gets pressed button coordinates & prints a display message if the game is active
     func userButtonPressedInput(row: Int, column: Int) -> String {
         var displaMessage = ""
+
         if gameStateArray[row][column] == .empty && GameIsActive == true {
             displaMessage = displayMessage(row: row, column: column)
         }
         return displaMessage
      }
+    
     // reset Game func
     func boardReset() {
         GameIsActive = true
@@ -66,7 +68,8 @@ class ticTacToeBrain {
             displayMessage = "player \(Player.Two)'s turn"
         }
         gameStateArray[row][column] = playerToken
-        
+
+
         switch checkWinningRowAndColumn(pressedRow: row, pressedColumn: column) {
         case true:
             displayMessage = "Player \(activePlayer) Wins this Game"
@@ -74,6 +77,7 @@ class ticTacToeBrain {
         case false:
             break
         }
+
         switch checkDiagonalWin(pressedRow: row, pressedColumn: column) {
         case true:
             displayMessage = "Player \(activePlayer) Wins this Game"

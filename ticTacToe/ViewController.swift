@@ -70,3 +70,4 @@ class ViewController: UIViewController {
 	} //end func selectSpot
 } //end viewController
 
+

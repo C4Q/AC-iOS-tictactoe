@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,15 +15,245 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ticTacToe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tic-tac-toe" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-rT-Lbo">
+                                <rect key="frame" x="87" y="258" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="eHW-Uy-z7M"/>
+                                    <constraint firstAttribute="width" constant="240" id="kMD-Ga-MNT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-Hb-E0Q">
+                                <rect key="frame" x="143.66666666666666" y="641" width="126.99999999999997" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Reset Game"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9B2-vq-a44"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JO-Xs-hSn" userLabel="Message Label">
+                                <rect key="frame" x="207" y="113.33333333333333" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kE4-Fl-5M7">
+                                <rect key="frame" x="96.666666666666686" y="258" width="221" height="73"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPK-k2-4jc" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="AA9-d2-bI8"/>
+                                            <constraint firstAttribute="height" constant="70" id="fNR-TY-jLY"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cJ5-00-f9u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eA3-YT-87C" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="72.999999999999986" y="0.0" width="73.000000000000014" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="GWr-Zn-72C"/>
+                                            <constraint firstAttribute="width" constant="73" id="LmO-kk-Gbx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gKC-ON-33F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URR-3j-XKJ" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="146" y="0.0" width="75" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="AyL-XS-tUc"/>
+                                            <constraint firstAttribute="width" constant="75" id="VuG-ab-snp"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUE-yi-3T5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-1C-rR3">
+                                <rect key="frame" x="96.999999999999986" y="341.66666666666669" width="219.66666666666663" height="73"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhj-1e-nhB" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="PkW-SX-Ud7"/>
+                                            <constraint firstAttribute="height" constant="73" id="VXK-rv-SkD"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sLw-qu-gf8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WbS-mI-ZAe" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="73.666666666666657" y="0.0" width="73" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="UsJ-YX-ipW"/>
+                                            <constraint firstAttribute="width" constant="73" id="jLl-yj-4wi"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNB-uy-GUQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-N6-yJz" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="146.66666666666666" y="0.0" width="73" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="KSq-Ei-lwy"/>
+                                            <constraint firstAttribute="height" constant="73" id="NAH-7s-d1S"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J05-9T-B1N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHV-Lz-52i">
+                                <rect key="frame" x="97" y="425" width="219" height="73"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-Rq-f2h" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="73" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="nw7-2T-4CE"/>
+                                            <constraint firstAttribute="width" constant="73" id="zl3-Jl-Ji2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="da1-QQ-DOK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-pW-YTb" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="73" y="0.0" width="73" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="73" id="1O2-1H-nhL"/>
+                                            <constraint firstAttribute="width" constant="73" id="OfP-4G-j0l"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EST-ur-YA2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlE-UV-nf4" customClass="GameButton" customModule="ticTacToe" customModuleProvider="target">
+                                        <rect key="frame" x="146" y="0.0" width="73" height="73"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="Eqh-Ph-yuc"/>
+                                            <constraint firstAttribute="height" constant="73" id="Ynt-SY-9Nn"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="row">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="column">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jJ6-12-pC9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vHV-Lz-52i" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Ee-TK-mXY"/>
+                            <constraint firstItem="kE4-Fl-5M7" firstAttribute="top" secondItem="KbD-rT-Lbo" secondAttribute="top" id="6cO-4i-j1D"/>
+                            <constraint firstItem="5JO-Xs-hSn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BtB-Om-Rdg"/>
+                            <constraint firstItem="vHV-Lz-52i" firstAttribute="bottom" secondItem="KbD-rT-Lbo" secondAttribute="bottom" id="IMT-Mx-1Wf"/>
+                            <constraint firstItem="8lZ-1C-rR3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MGc-7E-IW9"/>
+                            <constraint firstItem="kE4-Fl-5M7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QJH-PS-MxV"/>
+                            <constraint firstItem="8lZ-1C-rR3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="XYk-1c-lvp"/>
+                            <constraint firstItem="5JO-Xs-hSn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.3" id="adV-iz-EXY"/>
+                            <constraint firstItem="GjD-Hb-E0Q" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.75" id="dXc-4a-bFZ"/>
+                            <constraint firstItem="KbD-rT-Lbo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kUE-Zm-tuY"/>
+                            <constraint firstItem="KbD-rT-Lbo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rbC-c5-ztQ"/>
+                            <constraint firstItem="GjD-Hb-E0Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wba-zf-CDw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="5JO-Xs-hSn" id="sfj-Rs-LoX"/>
+                        <outletCollection property="testButton" destination="eA3-YT-87C" collectionClass="NSMutableArray" id="BKn-WN-88z"/>
+                        <outletCollection property="testButton" destination="bPK-k2-4jc" collectionClass="NSMutableArray" id="Otj-HZ-ib4"/>
+                        <outletCollection property="testButton" destination="URR-3j-XKJ" collectionClass="NSMutableArray" id="2rt-RB-3tJ"/>
+                        <outletCollection property="testButton" destination="WbS-mI-ZAe" collectionClass="NSMutableArray" id="06w-9Q-PVQ"/>
+                        <outletCollection property="testButton" destination="Rhj-1e-nhB" collectionClass="NSMutableArray" id="X9I-pe-8gt"/>
+                        <outletCollection property="testButton" destination="4DB-N6-yJz" collectionClass="NSMutableArray" id="9bw-DI-PxC"/>
+                        <outletCollection property="testButton" destination="FWi-Rq-f2h" collectionClass="NSMutableArray" id="QXr-dp-lfp"/>
+                        <outletCollection property="testButton" destination="AlE-UV-nf4" collectionClass="NSMutableArray" id="sh5-6i-bDB"/>
+                        <outletCollection property="testButton" destination="W2f-pW-YTb" collectionClass="NSMutableArray" id="7p0-SR-dL7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="135.19999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tic-tac-toe" width="2095" height="2002"/>
+    </resources>
 </document>
